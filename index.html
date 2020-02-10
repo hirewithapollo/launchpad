@@ -49,8 +49,8 @@
           <p>If this sounds like something you're interested in we'd love to keep you updated on our progress. We'll send you infrequent updates on big milestones, and
           eventually an invite. We hate spam as much as you do, we promise this isn't that.</p>
           <p>
-            <input type="email" spellcheck="false" placeholder="Enter your email" class="input"/>
-            <button class="button" onclick="sendEmail()">Keep me updated</button>
+            <input id="email" type="email" spellcheck="false" placeholder="Enter your email" class="input" />
+            <button id="submit" class="button" onclick="sendEmail()">Keep me updated</button>
           </p>
         </section>
 
@@ -269,9 +269,30 @@
       src: url(fonts/SourceSansVariable.woff2) format("woff2");
     }
   </style>
+
   <script>
     function sendEmail() {
-      console.log('send email..');
+      var url = "https://chat.hirewithapollo.com";
+      // var url = "http://localhost:3000";
+      var email = document.getElementById("email");
+      var button = document.getElementById("submit");
+
+      button.innerHTML = "Submitting...";
+
+      fetch(url, {
+        method : "POST",
+        body: JSON.stringify({ email: email.value }),
+        headers: {
+          "Content-Type": "application/json"
+        },
+      }).then(() => {
+        email.value = '';
+        setTimeout(function() { button.innerHTML = "Done!" }, 1000);
+        setTimeout(function() { button.innerHTML = "Keep me updated" }, 2000);
+      }).catch(() => {
+        setTimeout(function() { button.innerHTML = "Error!" }, 1000);
+        setTimeout(function() { button.innerHTML = "Keep me updated" }, 2000);
+      });
     }
   </script>
 </html>
