@@ -34,9 +34,9 @@
           <p><a href="/">Apollo</a> is what we wished existed.</p>
           <p>You shouldn't have to spend so much time and energy hiring folks. There should be software that takes care of most of it for you,
           so you can go back to doing what you do best!</p>
-          <p>Apollo is our attempt to fix this. It's not ready yet, but it will be soon. We don't want to create just another hiring tool. We're talking to
-          real people about their experiences. We're learning what other people are doing today, what's great about it and what sucks.</p>
-          <p>We're building Apollo for you. Building a business is really hard, we're hoping to make it just a little bit easier.</p>
+          <p>We're building Apollo for you. We're talking to real people about their experiences. We're learning what other people are doing today,
+          what's great about it and what sucks. Building a business is really hard, we're hoping to make it just a little bit easier.</p>
+          <p>We don't want to create just another hiring tool. It's not ready yet, but it will be soon.</p>
           <p>- <em>The Apollo Team</em></p>
           <p></p>
         </section>
@@ -50,13 +50,13 @@
           eventually an invite. We hate spam as much as you do, we promise this isn't that.</p>
           <p>
             <input type="email" spellcheck="false" placeholder="Enter your email" class="input"/>
-            <button class="button">Keep me updated</button>
+            <button class="button" onclick="sendEmail()">Keep me updated</button>
           </p>
         </section>
 
         <section>
           <p>P.S. We'll only use your email address to keep you updated about our progress to launch and to eventually send you an invite. We won't use it for
-          future marketing, sales, or anything like that. We'll never sale or trade your name or email. In fact, once we launch we'll delete the list to ensure
+          future marketing, sales, or anything like that. We'll never sell or trade your name or email. In fact, once we launch we'll delete the list to ensure
           that doesn't happen.</p>
           <p>P.P.S. If you'd like to talk to use about your hiring experience we'd love to hear from you! Send an email to
           <a href="mailto: chat@hirewithapollo.com?subject=I'd love to chat">chat@hirewithapollo.com</a>, tell us a little about yourself and we'll go from there!</p>
@@ -261,4 +261,9 @@
       src: url(fonts/SourceSansVariable.woff2) format("woff2");
     }
   </style>
+  <script>
+    function sendEmail() {
+      console.log('send email..');
+    }
+  </script>
 </html>
